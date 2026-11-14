@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <title>Cartside — local food, one good order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Cartside home">
+        <span>GRESHAM FOOD CARTS<span class="brand-period">.</span></span>
+      </a>
+      <div class="market-label">
+        <span class="live-dot"></span> THE NEIGHBORHOOD MARKET
+      </div>
+      <button
+        class="view-switch"
+        id="view-switch"
+        type="button"
+        aria-pressed="false"
+      >
+        <span class="switch-icon">▤</span
+        ><span id="switch-label">Food cart login</span
+        ><span class="switch-arrow">↗</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="customer-view" id="customer-view">
+        <div class="section-heading pod-heading" id="pod-map-title">
+          <div>
+            <h2>Pick your cart<span>.</span></h2>
+          </div>
+          <div class="order-note">
+            <span>↙</span> Tap any food cart to see its menu
+          </div>
+        </div>
+
+        <section class="pod-map" aria-label="Gresham Food Carts pod">
+          <div class="map-toolbar">
+            <div>
+              <span class="map-live-dot"></span>
+              <span class="map-toolbar-title">GRESHAM FOOD CARTS</span>
+              <span class="map-toolbar-address">Gresham, Oregon</span>
+            </div>
+            <span class="map-toolbar-hint">Choose a cart to see its menu</span>
+          </div>
+          <div class="pod-ground">
+            <div class="pod-path path-horizontal"></div>
+            <div class="pod-path path-vertical"></div>
+            <div class="pod-building" aria-hidden="true">
+              <span class="building-roof">
+                <span class="building-skylight"></span>
+                <span class="building-skylight"></span>
+              </span>
+              <span class="building-window building-window-one"></span>
+              <span class="building-window building-window-two"></span>
+              <span class="building-entry"></span>
+              <span class="building-label">GRESHAM FOOD CARTS</span>
+            </div>
+
+            <div
+              class="truck-stalls"
+              id="truck-stalls"
+              role="group"
+              aria-label="Food carts"
+            ></div>
+          </div>
+          <div class="map-legend">
+            <span><i></i> FIVE LOCAL FOOD CARTS</span>
+            <span>Tap a cart to start an order</span>
+          </div>
+        </section>
+
+        <section
+          class="menu-layout hidden"
+          id="menu-layout"
+          aria-label="Food cart menu and order"
+        >
+          <div class="menu-column">
+            <div class="selected-cart-heading" id="selected-cart-heading"></div>
+            <div class="menu-grid" id="menu-grid"></div>
+          </div>
+          <aside class="order-card" id="order-card" aria-label="Your order">
+            <div class="order-card-top">
+              <div class="eyebrow">YOUR PICKUP</div>
+              <div class="order-bag">↗</div>
+            </div>
+            <h3>Good things<br />are <span>coming.</span></h3>
+            <div class="order-cart-label" id="order-cart-label"></div>
+            <div class="cart-lines" id="cart-lines"></div>
+            <div class="cart-empty" id="cart-empty">
+              <span class="empty-plate">◎</span>
+              <p>Your order starts here.<br />Add something delicious.</p>
+            </div>
+            <div class="order-form">
+              <label for="customer-name">YOUR NAME</label>
+              <input
+                id="customer-name"
+                name="customer-name"
+                maxlength="60"
+                placeholder="What should we call out?"
+                autocomplete="given-name"
+              />
+            </div>
+            <div class="order-total">
+              <span>Subtotal</span><strong id="order-total">$0.00</strong>
+            </div>
+            <button class="place-order" id="place-order" type="button" disabled>
+              <span>Send to the cart</span><span aria-hidden="true">→</span>
+            </button>
+            <p class="order-footnote">Pickup &amp; pay at your food cart.</p>
+          </aside>
+        </section>
+        <footer class="site-footer">
+          <span>MADE FOR THE LOVE OF LOCAL.</span
+          ><span
+            >GRESHAM FOOD CARTS <span class="footer-dot">●</span> YOUR
+            NEIGHBORHOOD, SERVED.</span
+          >
+        </footer>
+      </section>
+
+      <section class="station-view hidden" id="station-view">
+        <div class="station-heading">
+          <div>
+            <div class="eyebrow">
+              <span class="live-dot"></span> FOOD CART DASHBOARD
+            </div>
+            <h1>The order <span>window.</span></h1>
+            <p>
+              Every order comes straight to its cart. Keep the good food moving.
+            </p>
+          </div>
+          <div class="station-clock">
+            <span class="clock-dot"></span> UPDATING LIVE
+          </div>
+        </div>
+        <div class="station-filters">
+          <div class="filter-label">ORDER BOARD</div>
+          <div
+            class="station-tabs"
+            id="station-tabs"
+            role="tablist"
+            aria-label="Select food cart"
+          ></div>
+          <button class="refresh-button" id="refresh-orders" type="button">
+            <span>↻</span> Refresh
+          </button>
+        </div>
+        <div class="station-stats" id="station-stats"></div>
+        <div class="queue-heading">
+          <h2 id="queue-title">Incoming orders</h2>
+          <span id="queue-updated"></span>
+        </div>
+        <div class="order-queue" id="order-queue"></div>
+        <footer class="site-footer">
+          <span>MADE FOR THE LOVE OF LOCAL.</span
+          ><span
+            >GRESHAM FOOD CARTS <span class="footer-dot">●</span> THE ORDER
+            WINDOW.</span
+          >
+        </footer>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
