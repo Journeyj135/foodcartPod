@@ -1,3 +1,5 @@
+
+
 # Cartside
 
 A neighborhood food-cart ordering app. Customers can browse vendors at Gresham Food Carts, build an order for one cart, and send it to that cart's local order queue. Food-cart staff can view their own queue, advance orders through preparation, and mark pickups complete.
@@ -7,9 +9,10 @@ Orders, menu items, and cart information are stored in a local SQLite database. 
 ## Run it
 
 1. Open a terminal in this folder.
-2. Run `python app.py`.
-3. Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
-4. Select **Food cart login** to open the cart dashboard and choose a cart.
+2. cd pods/foodcartPod/foodcartPod
+3. Run `python app.py`.
+4. Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
+5. Select **Food cart login** to open the cart dashboard and choose a cart.
 
 Python 3.9 or newer is required. The server uses only Python's standard library; no package installation is necessary. To stop the server, press **Ctrl+C** in the terminal.
 
