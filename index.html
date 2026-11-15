@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f5f0" />
-    <title>Cartside — local food, one good order</title>
+    <meta name="theme-color" content="#050505" />
+    <title>Gresham Food Carts — Order Local</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,12 +16,6 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#" aria-label="Cartside home">
-        <span>GRESHAM FOOD CARTS<span class="brand-period">.</span></span>
-      </a>
-      <div class="market-label">
-        <span class="live-dot"></span> THE NEIGHBORHOOD MARKET
-      </div>
       <button
         class="view-switch"
         id="view-switch"
@@ -36,28 +30,15 @@
 
     <main>
       <section class="customer-view" id="customer-view">
-        <div class="section-heading pod-heading" id="pod-map-title">
-          <div>
-            <h2>Pick your cart<span>.</span></h2>
-          </div>
-          <div class="order-note">
-            <span>↙</span> Tap any food cart to see its menu
-          </div>
-        </div>
-
         <section class="pod-map" aria-label="Gresham Food Carts pod">
-          <div class="map-toolbar">
-            <div>
-              <span class="map-live-dot"></span>
-              <span class="map-toolbar-title">GRESHAM FOOD CARTS</span>
-              <span class="map-toolbar-address">Gresham, Oregon</span>
-            </div>
-            <span class="map-toolbar-hint">Choose a cart to see its menu</span>
-          </div>
           <div class="pod-ground">
             <div class="pod-path path-horizontal"></div>
             <div class="pod-path path-vertical"></div>
-            <div class="pod-building" aria-hidden="true">
+            <div
+              class="pod-building"
+              role="img"
+              aria-label="Gresham Food Carts building"
+            >
               <span class="building-roof">
                 <span class="building-skylight"></span>
                 <span class="building-skylight"></span>
@@ -65,7 +46,7 @@
               <span class="building-window building-window-one"></span>
               <span class="building-window building-window-two"></span>
               <span class="building-entry"></span>
-              <span class="building-label">GRESHAM FOOD CARTS</span>
+              <span class="building-label">GRESHAM<br />FOOD CARTS</span>
             </div>
 
             <div
@@ -74,10 +55,6 @@
               role="group"
               aria-label="Food carts"
             ></div>
-          </div>
-          <div class="map-legend">
-            <span><i></i> FIVE LOCAL FOOD CARTS</span>
-            <span>Tap a cart to start an order</span>
           </div>
         </section>
 

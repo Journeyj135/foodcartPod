@@ -88,6 +88,21 @@ CARTS = [
             ("xanos-agua-fresca", "Watermelon agua fresca", "Fresh watermelon, lime & a little sparkle.", 450, "🍉", "Cold drink"),
         ],
     },
+    {
+        "id": "wings-n-thingz",
+        "name": "Wingz N Thingz",
+        "cuisine": "Wings",
+        "description": "Crispy wings and classic sides.",
+        "time": "10–15 min",
+        "color": "#b84d3f",
+        "icon": "🍗",
+        "items": [
+            ("wings-buffalo", "Buffalo wings", "Crispy wings tossed in tangy buffalo sauce.", 1250, "🍗", "Popular"),
+            ("wings-bbq", "BBQ wings", "Smoky barbecue wings with a sweet finish.", 1250, "🍖", ""),
+            ("wings-tenders", "Chicken tenders", "Golden tenders served with your choice of dip.", 1050, "🍗", ""),
+            ("wings-fries", "Seasoned fries", "Hot fries tossed with house seasoning.", 550, "🍟", "Side"),
+        ],
+    },
 ]
 
 
@@ -157,6 +172,11 @@ def initialize_database():
                 (cart["id"], cart["name"], cart["cuisine"], cart["description"],
                  cart["time"], cart["color"], cart["icon"]),
             )
+            if cart["id"] == "wings-n-thingz":
+                connection.execute(
+                    "UPDATE carts SET name = ? WHERE id = ? AND name = ?",
+                    (cart["name"], cart["id"], "Wings N Thingz"),
+                )
             for item in cart["items"]:
                 item_id, name, description, price, icon, badge = item
                 connection.execute(

@@ -78,15 +78,12 @@ function renderMenu() {
   const cart = state.carts.find((entry) => entry.id === state.selectedCart);
   const menuLayout = document.querySelector("#menu-layout");
   const pod = document.querySelector(".pod-map");
-  const mapHeading = document.querySelector("#pod-map-title");
   if (!cart) {
     menuLayout.classList.add("hidden");
     pod.classList.remove("hidden");
-    mapHeading.classList.remove("hidden");
     return;
   }
   pod.classList.add("hidden");
-  mapHeading.classList.add("hidden");
   menuLayout.classList.remove("hidden");
   document.querySelector("#selected-cart-heading").innerHTML = `
     <div class="picked-cart"><span class="picked-cart-icon">${escapeHtml(cart.icon)}</span>
